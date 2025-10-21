@@ -1,0 +1,68 @@
+body {
+  background-color: var(--tblr-bg-surface);
+  color: var(--tblr-body-color);
+}
+
+/* Hero section */
+.hero {
+  background: url("images/654cae8b-1967-4050-bf03-1940f48543ea.jpg") center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero > .container-xl {
+  position: relative;
+  z-index: 1;
+}
+
+/* Archive accordion */
+.accordion-item {
+  border: 1px solid var(--tblr-border-color);
+  border-radius: .25rem;
+  margin-bottom: .5rem;
+  background: var(--tblr-bg-surface-secondary);
+}
+
+.accordion-button {
+  font-weight: 600;
+}
+
+.file-list a {
+  display: block;
+  padding: 2px 0;
+  color: var(--tblr-primary);
+  text-decoration: none;
+}
+.file-list a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 40vh;
+  }
+}
+
+.file-list a {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 0.95rem;
+  padding: 2px 0;
+  text-decoration: none;
+}
+
+.file-list a:hover {
+  text-decoration: underline;
+}

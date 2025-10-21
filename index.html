@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamanan Archive</title>
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/css/tabler.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="container-xl text-center text-white py-6">
+      <h1 class="display-4 fw-bold mb-2">Tamanan Archive</h1>
+      <p class="lead">A collection of Tamanan organized by year and month.</p>
+      <a href="#archive" class="btn btn-primary mt-3">Explore Archive</a>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md bg-body border-bottom sticky-top">
+    <div class="container-xl">
+      <a href="#" class="navbar-brand">Tamanan Archive</a>
+      <div class="navbar-nav ms-auto">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#archive" class="nav-link">Archive</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="page-body container-xl my-5">
+    <section id="about" class="mb-5">
+      <h2 class="mb-3">About</h2>
+      <div id="about-content" class="card p-4">Loading...</div>
+    </section>
+
+    <section id="archive">
+      <h2 class="mb-3">Archive</h2>
+      <div id="archive-list" class="accordion"></div>
+    </section>
+  </main>
+
+  <footer class="footer footer-transparent border-top py-4">
+    <div class="container-xl text-center small text-muted">
+      &copy; <span id="year"></span> Tamanan Archive
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/js/tabler.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

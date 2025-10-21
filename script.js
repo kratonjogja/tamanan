@@ -55,7 +55,7 @@ fetch(`https://raw.githubusercontent.com/${username}/${repo}/${branch}/README.md
 /* ----------------------------------------------------------
    Load top-level directories (years)
 ---------------------------------------------------------- */
-fetchJSON(`https://api.github.com/repos/${username}/${repo}/contents/`)
+fetchJSON(`https://github-proxy.krtnjgj.workers.dev/?url=https://api.github.com/repos/${username}/${repo}/contents/`)
   .then(items => {
     const years = sortByNumericDesc(items.filter(item => /^\d{4}$/.test(item.name)));
     renderYears(years);
@@ -110,7 +110,7 @@ function renderYears(years) {
 ---------------------------------------------------------- */
 async function loadMonths(year, container) {
   try {
-    const months = await fetchJSON(`https://api.github.com/repos/${username}/${repo}/contents/${year}`);
+    const months = await fetchJSON(`https://github-proxy.krtnjgj.workers.dev/?url=https://api.github.com/repos/${username}/${repo}/contents/${year}`);
     container.innerHTML = "";
 
     const validMonths = sortByNumericDesc(months.filter(m => /^\d{2}$/.test(m.name)));
@@ -139,7 +139,7 @@ async function renderMonthCard(year, month, container) {
   container.appendChild(card);
   card.appendChild(cardBody);
 
-  const commitUrl = `https://api.github.com/repos/${username}/${repo}/commits?path=${year}/${month.name}&per_page=1`;
+  const commitUrl = `https://github-proxy.krtnjgj.workers.dev/?url=https://api.github.com/repos/${username}/${repo}/commits?path=${year}/${month.name}&per_page=1`;
 
   try {
     const commits = await fetchJSON(commitUrl);
@@ -163,7 +163,7 @@ async function renderMonthCard(year, month, container) {
 ---------------------------------------------------------- */
 async function loadFiles(year, month, listDiv) {
   try {
-    const files = await fetchJSON(`https://api.github.com/repos/${username}/${repo}/contents/${year}/${month}`);
+    const files = await fetchJSON(`https://github-proxy.krtnjgj.workers.dev/?url=https://api.github.com/repos/${username}/${repo}/contents/${year}/${month}`);
     if (!files.length) {
       listDiv.textContent = "No files found.";
       return;
